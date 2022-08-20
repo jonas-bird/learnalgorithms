@@ -6,10 +6,9 @@ import (
 
 func main() {
     var numbers []int = []int{5, 4, 2, 3, 1, 0}
-    fmt.Println("Our list of numbers is:", numbers)
-	fmt.Println("After 0 sweep(s):", numbers)
-    sweep(numbers)
-	fmt.Println("After 1 sweep(s):", numbers)
+    fmt.Println("Our unsorted list of numbers is:", numbers)
+	bubbleSort(numbers)
+	fmt.Println("After bubble sort:", numbers)
 }
 
 func sweep(numbers []int) {
@@ -35,5 +34,13 @@ func sweep(numbers []int) {
 		// Increment the indexes for the next comparison
 		firstIndex++
 		secondIndex++
+	}
+}
+
+func bubbleSort(numbers []int) {
+	var N int = len(numbers)
+	var i int
+	for i = 0; i < N; i++ {
+		sweep(numbers)
 	}
 }
