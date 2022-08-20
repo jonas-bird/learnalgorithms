@@ -7,9 +7,9 @@ import (
 func main() {
     var numbers []int = []int{5, 4, 2, 3, 1, 0}
     fmt.Println("Our list of numbers is:", numbers)
-
+	fmt.Println("After 0 sweep(s):", numbers)
     sweep(numbers)
-
+	fmt.Println("After 1 sweep(s):", numbers)
 }
 
 func sweep(numbers []int) {
@@ -23,12 +23,16 @@ func sweep(numbers []int) {
 
 	// Loop over the index
     for secondIndex < N {
-
-		// printf testing code
 		var firstNumber int = numbers[firstIndex]
 		var secondNumber int = numbers[secondIndex]
-		fmt.Println("Comparing the following: ", firstNumber, secondNumber)
 
+		// Compare, and swap if needed, the elements of the slice
+		if firstNumber > secondNumber {
+			numbers[firstIndex] = secondNumber
+			numbers[secondIndex] = firstNumber
+					}
+
+		// Increment the indexes for the next comparison
 		firstIndex++
 		secondIndex++
 	}
